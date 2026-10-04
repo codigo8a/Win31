@@ -1,0 +1,16 @@
+{
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": "./index.js",
+    "./pixel-ops": "./pixel-ops.js",
+    "./screen-saver": "./screen-saver.js"
+  },
+  "files": [
+    "*.js",
+    "*.css"
+  ],
+  "name": "@win31/render",
+  "description": "WebGPU/WebGL2/Canvas desktop renderer and WebGPU image compute"
+}

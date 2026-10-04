@@ -1,0 +1,20 @@
+{
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": "./index.js",
+    "./minesweeper": "./minesweeper.js",
+    "./solitaire": "./solitaire.js",
+    "./styles.css": "./styles.css"
+  },
+  "files": [
+    "*.js",
+    "*.css"
+  ],
+  "name": "@win31/games",
+  "description": "Klondike Solitaire and Minesweeper engines and desktop apps",
+  "dependencies": {
+    "@win31/core": "0.1.0"
+  }
+}

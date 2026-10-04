@@ -1,0 +1,19 @@
+{
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": "./index.js",
+    "./styles.css": "./theme.css"
+  },
+  "files": [
+    "*.js",
+    "*.css",
+    "fonts/**"
+  ],
+  "name": "@win31/shell",
+  "description": "Window manager, menus, Program Manager and help",
+  "dependencies": {
+    "@win31/core": "0.1.0"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": "./index.js",
+    "./styles.css": "./styles.css"
+  },
+  "files": [
+    "*.js",
+    "*.css"
+  ],
+  "name": "@win31/system",
+  "description": "File Manager, Control Panel, DOS commands and system utilities",
+  "dependencies": {
+    "@win31/core": "0.1.0"
+  }
+}

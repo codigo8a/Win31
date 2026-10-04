@@ -1,0 +1,16 @@
+{
+  "name": "windows-31-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Modular browser-native Windows 3.1 desktop",
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "dev": "node scripts/dev.mjs",
+    "start": "node scripts/dev.mjs"
+  },
+  "workspaces": [
+    "dist/packages/*"
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "completed": true,
+  "passed": 34,
+  "failed": 0,
+  "graphics": "Canvas2D",
+  "registeredApps": 28,
+  "results": [
+    {
+      "name": "Graphics renderer initializes",
+      "passed": true,
+      "detail": "{\"backend\":\"Canvas2D\",\"warnings\":[]}"
+    },
+    {
+      "name": "Wallpaper render accepts theme change",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Program Manager creates four groups",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application notepad",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application write",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application calculator",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application calendar",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application cardfile",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application charmap",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application clipboard",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application filemanager",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application dos",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application printmanager",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application terminal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application pifeditor",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application setup",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application regedit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application packager",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application control",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application minesweeper",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application solitaire",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application paintbrush",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application clock",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application mediaplayer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application soundrecorder",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application recorder",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application help",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application tutorial",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application sysedit",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Application drwatson",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Notepad reads shared filesystem",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Notepad Save writes edited text",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Calculator real button arithmetic",
+      "passed": true,
+      "detail": "5"
+    },
+    {
+      "name": "No JavaScript errors",
+      "passed": true,
+      "detail": ""
+    }
+  ]
+}

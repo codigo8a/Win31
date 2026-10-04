@@ -1,0 +1,18 @@
+{
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": "./index.js",
+    "./styles.css": "./styles.css"
+  },
+  "files": [
+    "*.js",
+    "*.css"
+  ],
+  "name": "@win31/media",
+  "description": "Paintbrush, Clock, media playback, sound recording and macros",
+  "dependencies": {
+    "@win31/core": "0.1.0"
+  }
+}

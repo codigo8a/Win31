@@ -1,0 +1,551 @@
+.mine-app {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  background: var(--face, #c0c0c0);
+  font-family: var(--font-ui);
+  overflow: hidden;
+  user-select: none;
+}
+.mine-scroll {
+  overflow: auto;
+  flex: 1;
+  min-height: 0;
+  padding: 12px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.mine-panel {
+  --mine-cell: 25px;
+  flex: none;
+  border: 3px solid;
+  border-color: #fff #808080 #808080 #fff;
+  padding: 8px;
+  background: #c0c0c0;
+  margin: 0 auto;
+}
+.mine-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid;
+  border-color: #808080 #fff #fff #808080;
+  padding: 6px;
+  margin-bottom: 8px;
+  gap: 12px;
+  height: 51px;
+  box-sizing: border-box;
+}
+.mine-counter {
+  background: #000;
+  display: flex;
+  padding: 1px 2px;
+  border: 1px solid;
+  border-color: #808080 #fff #fff #808080;
+  height: 34px;
+  box-sizing: border-box;
+  gap: 0;
+}
+.mine-counter > span {
+  display: block;
+  width: 17px;
+  height: 29px;
+}
+.mine-counter svg {
+  width: 100%;
+  height: 100%;
+}
+.mine-face {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
+  padding: 2px;
+  background: #c0c0c0;
+  border: 3px solid;
+  border-color: #fff #808080 #808080 #fff;
+  box-shadow: 0 0 0 1px #808080;
+  cursor: default;
+}
+.mine-face:active {
+  border-color: #808080 #fff #fff #808080;
+  padding: 3px 1px 1px 3px;
+}
+.mine-face > span,
+.mine-face svg {
+  display: block;
+  width: 25px;
+  height: 25px;
+}
+.mine-grid {
+  display: grid;
+  width: max-content;
+  border: 3px solid;
+  border-color: #808080 #fff #fff #808080;
+}
+.mine-cell {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--mine-cell);
+  height: var(--mine-cell);
+  padding: 0;
+  border: 3px solid;
+  border-color: #fff #808080 #808080 #fff;
+  border-radius: 0;
+  background: #c0c0c0;
+  color: #000;
+  font:
+    900 20px/1 Arial,
+    sans-serif;
+  text-align: center;
+  cursor: default;
+  appearance: none;
+  touch-action: manipulation;
+}
+.mine-cell:not(.mine-open):active {
+  border: 1px solid #808080;
+}
+.mine-cell:focus-visible {
+  outline: 1px dotted #000;
+  outline-offset: -5px;
+  z-index: 1;
+}
+.mine-cell.mine-open {
+  border: 0;
+  border-right: 1px solid #808080;
+  border-bottom: 1px solid #808080;
+}
+.mine-cell.mine-exploded {
+  background: #f00;
+}
+.mine-symbol,
+.mine-symbol svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+.mine-wrong {
+  position: absolute;
+  inset: 0;
+  color: #f00;
+  line-height: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 1px 0 #000;
+}
+.mine-n1 {
+  color: #00f;
+}
+.mine-n2 {
+  color: #008000;
+}
+.mine-n3 {
+  color: #f00;
+}
+.mine-n4 {
+  color: #000080;
+}
+.mine-n5 {
+  color: #800000;
+}
+.mine-n6 {
+  color: #008080;
+}
+.mine-n7 {
+  color: #000;
+}
+.mine-n8 {
+  color: #808080;
+}
+.mine-status {
+  font: 12px/1.4 var(--font-ui);
+  padding: 4px 6px;
+  border-top: 1px solid #808080;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 23px;
+  box-sizing: border-box;
+}
+.mine-custom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px;
+}
+.mine-custom input {
+  width: 75px;
+}
+.mine-best {
+  padding: 4px 14px;
+}
+.sol-app {
+  position: relative;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  background: #008000;
+  font-family: var(--font-ui);
+  user-select: none;
+  overflow: hidden;
+}
+.sol-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  position: relative;
+  background: #008000;
+}
+.sol-table {
+  --card-w: 71px;
+  --card-h: 96px;
+  min-width: 570px;
+  min-height: 100%;
+  padding: 18px 18px 22px;
+  box-sizing: border-box;
+  background: #008000;
+  outline: none;
+}
+.sol-top,
+.sol-tableau {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(71px, 1fr));
+  column-gap: 10px;
+}
+.sol-top {
+  height: 96px;
+  margin-bottom: 28px;
+}
+.sol-pile,
+.sol-column {
+  position: relative;
+  min-width: 71px;
+  min-height: 96px;
+  outline: none;
+}
+.sol-pile {
+  height: 96px;
+}
+.sol-tableau {
+  position: relative;
+}
+.sol-column {
+  width: 100%;
+}
+.sol-column > .sol-card,
+.sol-pile > .sol-card {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.sol-card,
+.sol-empty {
+  width: var(--card-w, 71px);
+  height: var(--card-h, 96px);
+  box-sizing: border-box;
+  border-radius: 4px;
+  position: relative;
+  flex: none;
+}
+.sol-card {
+  border: 1px solid #000;
+  background: #fff;
+  box-shadow: 1px 1px 0 #000;
+  overflow: hidden;
+  cursor: default;
+  color: #000;
+  touch-action: manipulation;
+}
+.sol-card:focus-visible,
+.sol-empty:focus-visible,
+.sol-stock:focus-visible,
+.sol-foundation:focus-visible {
+  outline: 2px dotted #fff;
+  outline-offset: 3px;
+}
+.sol-empty {
+  border: 1px solid #004000;
+  box-shadow:
+    inset 1px 1px #006000,
+    1px 1px #00a000;
+  background: #008000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #004000;
+  pointer-events: auto;
+}
+.sol-redeal span {
+  font:
+    60px/1 Arial,
+    sans-serif;
+  margin-top: -6px;
+  color: #00c000;
+  text-shadow: 1px 1px #004000;
+}
+.sol-foundation-a {
+  font:
+    bold 44px/1 Georgia,
+    serif;
+  color: #006000;
+  text-shadow: 1px 1px #00a000;
+}
+.sol-foundation-a::after {
+  content: " ";
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #006000;
+  margin: 2px auto;
+}
+.sol-red {
+  color: #f00;
+}
+.sol-black {
+  color: #000;
+}
+.sol-card svg {
+  fill: currentColor;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.sol-corner {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 15px;
+  font:
+    700 15px/14px "Times New Roman",
+    serif;
+  letter-spacing: -1px;
+  z-index: 2;
+}
+.sol-corner > span:first-child {
+  height: 14px;
+}
+.sol-corner > span:last-child {
+  display: block;
+  width: 10px;
+  height: 11px;
+}
+.sol-corner-top {
+  left: 1px;
+  top: 3px;
+}
+.sol-corner-bottom {
+  right: 1px;
+  bottom: 3px;
+  transform: rotate(180deg);
+}
+.sol-pips {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: 8px;
+  bottom: 8px;
+}
+.sol-pip {
+  position: absolute;
+  width: 14px;
+  height: 16px;
+  transform: translate(-50%, -50%);
+}
+.sol-ace .sol-pip {
+  width: 27px;
+  height: 31px;
+}
+.sol-court {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: 9px;
+  bottom: 9px;
+}
+.sol-court svg {
+  height: 100%;
+  width: 100%;
+}
+.sol-back {
+  padding: 3px;
+}
+.sol-back-pattern {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  background-color: #000080;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0 2px,
+      #fff 2px 3px,
+      transparent 3px 5px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0 2px,
+      #fff 2px 3px,
+      transparent 3px 5px
+    );
+}
+.sol-back-diamonds .sol-back-pattern {
+  background-color: #800000;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0 4px,
+      #fff 4px 5px,
+      transparent 5px 9px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0 4px,
+      #fff 4px 5px,
+      transparent 5px 9px
+    );
+  border: 2px solid #800000;
+  outline: 1px solid #fff;
+  outline-offset: -3px;
+}
+.sol-back-castle .sol-back-pattern {
+  background-color: #000080;
+  background-image:
+    linear-gradient(90deg, #fff 1px, transparent 1px),
+    linear-gradient(#fff 1px, transparent 1px),
+    repeating-linear-gradient(
+      45deg,
+      transparent 0 5px,
+      #008080 5px 7px,
+      transparent 7px 10px
+    );
+  background-size:
+    8px 8px,
+    8px 8px,
+    16px 16px;
+  border: 2px solid #000080;
+  outline: 1px solid #fff;
+  outline-offset: -3px;
+}
+.sol-card.sol-selected {
+  filter: invert(1);
+  box-shadow: 0 0 0 2px #ffff00;
+}
+.sol-dragging {
+  opacity: 0.7;
+}
+.sol-drop {
+  outline: 2px solid #ffff00 !important;
+  outline-offset: 2px;
+}
+.sol-hint {
+  outline: 2px dashed #ffff00 !important;
+  outline-offset: 3px;
+}
+.sol-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: none;
+  min-height: 25px;
+  padding: 3px 7px;
+  box-sizing: border-box;
+  background: #c0c0c0;
+  border-top: 1px solid #fff;
+  color: #000;
+  font: 12px/1.3 var(--font-ui);
+}
+.sol-status-text {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sol-status > span:not(:first-child) {
+  white-space: nowrap;
+  border-left: 1px solid #808080;
+  padding-left: 8px;
+  min-width: 57px;
+}
+.sol-options {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.sol-options p {
+  margin: 0;
+  font-size: 12px;
+}
+.sol-deck-choices {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding: 16px 6px;
+}
+.sol-deck-choice {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 5px;
+  color: #000;
+  font: 12px var(--font-ui);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.sol-deck-choice-selected {
+  border: 1px dotted #000;
+}
+.sol-deck-choice > .sol-card {
+  pointer-events: none;
+}
+.sol-deck-choice:active {
+  background: #aaa;
+}
+.sol-victory {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  cursor: default;
+  image-rendering: pixelated;
+  outline: none;
+  touch-action: none;
+}
+.sol-stock-blocked > span {
+  font:
+    bold 56px/1 Arial,
+    sans-serif;
+  color: #800000;
+  text-shadow: 1px 1px #000;
+}
+.sol-drag-outline {
+  position: fixed;
+  left: -10000px;
+  top: 0;
+  width: 71px;
+  box-sizing: border-box;
+  border: 2px solid #000;
+  box-shadow: inset 0 0 0 1px #fff;
+  background: transparent;
+  pointer-events: none;
+}
+.sol-options input[type="checkbox"] {
+  accent-color: #000080;
+}
+.sol-options label:has(input:disabled) {
+  color: #808080;
+  text-shadow: 1px 1px #fff;
+}

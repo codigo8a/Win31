@@ -1,0 +1,22 @@
+{
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": "./index.js",
+    "./filesystem": "./filesystem.js",
+    "./storage": "./storage.js",
+    "./dom": "./dom.js",
+    "./os": "./os.js"
+  },
+  "files": [
+    "*.js",
+    "*.css"
+  ],
+  "name": "@win31/core",
+  "description": "Virtual filesystem, preferences, DOM adapters, and desktop application host",
+  "dependencies": {
+    "@win31/render": "0.1.0",
+    "@win31/shell": "0.1.0"
+  }
+}
