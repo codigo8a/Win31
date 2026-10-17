@@ -49,7 +49,7 @@ const DEFAULT_GROUPS = [
       { id: "minesweeper", title: "Minesweeper", command: "WINMINE" },
     ],
   },
-  { id: "startup", title: "StartUp", icon: "main", items: [] },
+  { id: "startup", title: "StartUp", icon: "main", items: [{ id: "cardfile", title: "Cardfile", command: "CARDFILE" }] },
 ];
 
 function programManager(ctx) {

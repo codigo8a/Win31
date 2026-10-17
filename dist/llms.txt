@@ -1,0 +1,2492 @@
+# Win31 Web
+
+Browser recreation of Microsoft Windows 3.1 (1992) desktop. ES modules, no runtime deps.
+Apps: File Manager, DOS Prompt, Print Manager, Terminal, PIF Editor, Setup, RegEdit, Packager, Control Panel, Notepad, Write, Calculator, Calendar, Cardfile, CharMap, Clipboard, Paintbrush, Clock, Media Player, Sound Recorder, Recorder, Minesweeper, Solitaire.
+
+Docs: /docs/APPLICATIONS.md, /docs/CORE.md, /docs/SYSTEM.md, /docs/PRODUCTIVITY.md, /docs/MEDIA.md, /docs/GAMES.md, /docs/REFERENCES.md.
+
+
+# YouTube cards
+
+## SSL-free-gratis
+
+# Cómo instalar un certificado SSL gratis en Ubuntu Server
+
+Paso a paso para instalar un certificado SSL gratis en servidor web ubuntu
+
+En [mi canal de youtube](https://youtu.be/CDEaBtEeVwM) hay un video del paso a paso:
+
+Instalamos Certbot
+```csharp
+sudo apt-get update
+sudo apt-get install software-properties-common
+sudo add-apt-repository universe
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+sudo apt-get install certbot python-certbot-apache -y
+```
+
+## VScode-online
+
+# Cómo instalar IDE VSCode en Ubuntu Server
+
+Paso a paso para instalar el IDE de desarrollo VSCode y correrlo directamente en la nube desde una URL en un Servidor Linux Ubuntu alojado en Amazon AWS
+
+En [mi canal de youtube](https://youtu.be/tWzzzGoNEq4) hay un video del paso a paso:
+
+```csharp
+cd bin
+sudo wget https://github.com/cdr/code-server/releases/download/2.1698/code-server2.1698-vsc1.41.1-linux-x86_64.tar.gz
+sudo tar xvzf code-server2.1698-vsc1.41.1-linux-x86_64.tar.gz
+
+cd code-server2.1698-vsc1.41.1-linux-x86_64
+sudo mv code-server /bin
+cd ..
+sudo rm -rf code-server2.1698-vsc1.41.1-linux-x86_64.tar.gz
+sudo rm -rf code-server2.1698-vsc1.41.1-linux-x86_64
+sudo code-server
+```
+
+## activar-filtros-pagina-wish
+
+# Cómo activar filtros en WISH
+
+Paso a paso para activar los filtros en la pagina de WISH, que por algun motivo no los tiene disponibles para filtar el historial de pedidos en la version web.
+
+En [mi canal de youtube](https://youtu.be/07tvORy7cOw) hay un video del paso a paso:
+
+1. Entrar a WISH
+2. Entrar al historial de pedidos
+3. Inspeccionar la pagina
+4. Ver en version movil
+5. Usar los filtros
+6. Cerrar inspeccionador de codigo
+
+## alerta-hp-client-security
+
+# Quitar | Desactivar alerta de HP Client Security
+
+Paso a paso para lograr Quitar | Desactivar alerta de HP Client Security:
+Al instalar todos los drivers en un portatil HP necesarios para activar la huella digital y poder iniciar sesión sin necesidad de escribir una contraseña ... empieza a salir un molesto mensaje de alerta que hasta el día en que escribo este post, no existe manera de quitarlo por configuración. 
+
+La única opción que encontré para desactivar esta molesta alerta fue forzarlo por medio de un archivo de configuración que modifique el registro de Windows.
+
+La solución es muy rápida, pues cuenta solo con dos pasos.
+
+En [mi canal de youtube](https://youtu.be/fp5xfIOVwR8) hay un video del paso a paso:
+
+```
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\DigitalPersona\Applications\OTAppSettings]
+"ShowTrainingPrompt"=dword:00000000
+
+[HKEY_CURRENT_USER\Software\DigitalPersona\Applications\OTAppSettings\BrowserIntegration]
+"Firefox_notice"="-1"
+"Chrome_notice"="-1"
+```
+1. Se crea un archivo de texto con las lineas anteriores
+2. Se abre el registro de windows
+3. Se importa el archivo
+
+## allowed-memory-size-error
+
+# Cómo arreglar el error Memory Exhausted de WordPress en WP Engine
+
+Un par de lineas necesarias para arreglar en WordPress el error Memory Exhausted, o en otras palabras como incrementar la memoria de PHP (Increase PHP Memory) y en este caso lo haremos a un sitio web que esta alojado en la plataforma WP Engine. Los pasos son utiles para cualquier pagina web en wordpress y en cualquier hosting.
+
+En [mi canal de youtube](https://youtu.be/CDEaBtEeVwM) hay un video del paso a paso:
+
+Debemos buscar el archivo "wp-config.php" y agregar las siguientes lineas
+
+```php
+define('WP_MEMORY_LIMIT', '256M');
+define( 'WP_MAX_MEMORY_LIMIT', '512M' );
+```
+
+## ampliar-disco-virtualbox
+
+# Resize Disk - VirtualBox - Linux - Windows
+
+<p>Dos sencillos pasos para ampliar el disco de virtualbox desde Linux para Windows.</p>
+<p>En [mi canal de youtube](https://bit.ly/2wSo5iD) hay un video del paso a paso: </p>
+
+```csharp
+vboxmanage modifyhd "/home/ochoa/VirtualBox VMs/win10/win10.vdi" --resize 102400
+```
+y en windows:
+
+1. Click derecho sobre el boton de inicio
+2. Administración de discos
+3. Click derecho extender volumen
+
+## arreglar-error-ciclo-de-objetos-netcore5
+
+# Cómo arreglar error ciclos objetos para NetCore 5
+
+Paso a paso para arreglar el error "System.Text.Json.JsonException: A possible object cycle was detected. This can either be due to a cycle or if the object depth is larger than the maximum allowed depth of 32. Consider using ReferenceHandler.Preserve on JsonSerializerOptions to support cycles." para .NetCore 5
+
+En [mi canal de youtube](https://youtu.be/EbKw0Dcaf6o) hay un video del paso a paso:
+
+```csharp
+services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
+```
+
+## aws-iot-node-topic
+
+# Cómo enviar un topic a AWS IOT con Node.js
+
+
+Codigo paso a paso para conectar y enviar un topic a AWS IOT usando Node.js.
+
+En [mi canal de youtube](https://youtu.be/AQay6bFg7jU) hay un video del paso a paso:
+
+1. Creamos un objeto en AWS y descargamos el código de ejemplo
+
+2. Creamos un proyecto node
+- npm init
+
+3. Agregamos archivo:
+- index.js
+  
+4. instalamos libreria 
+- npm i aws-iot-device-sdk
+
+5. Ingresamos el codigo node:
+
+```react
+const awsIot = require('aws-iot-device-sdk');
+
+const today = new Date();
+const date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+const dateTime = date + ' ' + time;
+const topic = "topic"
+
+const device = awsIot.device({
+    clientId: 'clientId',
+    host: 'host',
+    port: 8883,
+    keyPath: './private.key',
+    certPath: './cert.pem',
+    caPath: './CA.crt',
+});
+
+const IoTDevice = {
+    serialNumber: "SN-D7F3C8947867",
+    dateTime,
+    activated: true,
+    device: "MyRaspperry-01",
+    type: "MySmartIoTDevice",
+    payload: {}
+}
+
+const getSensorData = (cb) => getDummySensorData(cb);
+
+const getDummySensorData = (cb) => {
+    const temperatureData = { temp: '100°C', humidity: '52%' }
+    return cb(temperatureData)
+}
+
+const sendData = (data) => {
+    const telemetryData = {
+        ...IoTDevice,
+        payload: data
+    }
+    console.log(`STEP - Sending data to AWS  IoT Core'`, telemetryData)
+    console.log(`---------------------------------------------------------------------------------`)
+    return device.publish(topic, JSON.stringify(telemetryData))
+}
+
+device
+    .on('connect', function () {
+        console.log('STEP - Connecting to AWS  IoT Core');
+        console.log(`---------------------------------------------------------------------------------`)
+        setInterval(() => getSensorData(sendData), 3000)
+
+    });
+
+device
+    .on('message', function (topic, payload) {
+        console.log('message', topic, payload.toString());
+    });
+
+device
+    .on('error', function (topic, payload) {
+        console.log('Error:', topic, payload.toString());
+    });
+```
+
+## babel-regenerator-runtime-error
+
+# Cómo solucionar regenerator runtime error nodejs
+
+Un par de lineas necesarias para solucionar el error de node.js (ReferenceError: regeneratorRuntime is not defined) que se presenta cuando se usa Babel.
+
+En [mi canal de youtube](https://youtu.be/5Kk3DcBNROE) hay un video del paso a paso:
+
+```
+npm install -D  @babel/plugin-transform-runtime
+npm install @babel/runtime
+```
+Agregar al archivo .babelrc
+```react
+"plugins": [
+    ["@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ]
+  ],
+```
+
+## bonos-forex-sin-deposito
+
+# Bonos sin deposito en brokers de Forex
+
+A continuación les dejo una URL que recopila los brokers que dan bonos de bienvenida sin necesidad de hacer deposito, algunos solo requieren que confirmemos la cuenta.
+
+[https://www.bestfxbonus.com/es/forex-no-deposit-bonus.html](https://www.bestfxbonus.com/es/forex-no-deposit-bonus.html)
+
+## captura-pantalla-celular-windows
+
+# Cómo transmitir pantalla del celular a Windows
+
+
+Paso a paso para transmitir la pantalla del celular al escitorio de windows.
+
+En [mi canal de youtube](https://youtu.be/lT1rHovN86M) hay un video del paso a paso:
+
+1. Bajar archivos:
+- <a target="_blank" href="https://mega.nz/file/6lFBnAYY#YanFe094ssBA3T5IT9nbNajq-gxPes_me5ziGTyOT3k">platform-tools_r28.0.0-windows.zip</a>
+- <a target="_blank" href="https://mega.nz/file/6tUWlKiT#PUTe5FHlUMcgo4d8qHNjqI7R480Zucar_f-XfxLyAjk">scrcpy-win64.rar</a>
+2. Descomprimir en una carpeta
+3. Conectar celular en modo solo carga  
+4. Ejecutar
+```csharp
+adb devices
+scrcpy
+```
+
+## cloud9-laravel-57
+
+# Instalación Cloud9 Laravel 5.7
+
+A continuación describo linea a linea lo que hay que hacer en la consola para tener en menos de 10 minutos un proyecto Laravel 5.7 corriendo en Cloud9.
+
+En [mi canal de youtube](https://bit.ly/2wSo5iD) hay un video del paso a paso: 
+
+
+```
+# Clear existing files
+#
+rm hello-world.php php.ini README.md
+
+# Install and configure PHP 7.1 Ondrej Repository
+#
+sudo add-apt-repository ppa:ondrej/php -y
+sudo apt-get update
+sudo apt-get install libapache2-mod-php7.1 -y
+sudo a2dismod php5
+sudo a2enmod php7.1
+sudo apt-get install php7.1-curl php7.1-cli php7.1-dev php7.1-gd php7.1-intl php7.1-mcrypt php7.1-json php7.1-mysql php7.1-opcache php7.1-bcmath php7.1-mbstring php7.1-soap php7.1-xml php7.1-zip -y
+
+#Install Laravel
+#
+sudo composer global require 'laravel/installer'
+export PATH=~/.composer/vendor/bin:$PATH
+sudo chown -R $USER $HOME/.composer
+laravel new 
+rm -rf ./composer
+
+#Configure public folder
+#
+printf '%s\n' ':%s/DocumentRoot\ \/home\/ubuntu\/workspace/DocumentRoot\ \/home\/ubuntu\/workspace\/public/g' 'x'  | sudo ex /etc/apache2/sites-enabled/001-cloud9.conf
+
+#Select and install the mysql version 5.7 or up
+#
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.9-1_all.deb
+sudo dpkg -i mysql-apt-config_0.8.9-1_all.deb
+sudo service apache2 restart
+sudo apt-get update
+sudo apt-get install mysql-server -y 
+sudo service  mysql restart 
+sudo mysql_upgrade
+
+#Configure database and .env file database=laravel, user=root, no password
+#
+sudo mysql --user="root" -e "CREATE DATABASE laravel character set UTF8mb4 collate utf8mb4_bin;"
+printf '%s\n' ':%s/DB_DATABASE=homestead/DB_DATABASE=laravel/g' 'x'  | sudo ex .env
+printf '%s\n' ':%s/DB_USERNAME=homestead/DB_USERNAME=root/g' 'x'  | sudo ex .env
+printf '%s\n' ':%s/DB_PASSWORD=secret/DB_PASSWORD=/g' 'x'  | sudo ex .env
+
+#Artisan auth scaffolding and migration
+#
+php artisan make:auth
+php artisan migrate
+
+#remove laravel installer
+#
+rm -rf laravel.sh
+rm -rf mysql-apt-config_0.8.9-1_all.deb
+
+```
+
+## como-agregar-contenedores-turnkey-proxmox
+
+# Cómo agregar templates turnkey a proxmox
+
+Comando de consola para lograr agregar los contenedores de turnkey al administrador de maquinas virtuales Proxmox.
+
+En [mi canal de youtube](https://youtu.be/x2nCjLq2KLE) hay un video del paso a paso:
+
+* Ingresamos a nuestro panel de control de Proxmox
+* Ingresamos a nuestro servidor
+* Ingresamos al Shell
+* Copiamos y pegamos el siguiente comando
+
+```csharp
+pveam update
+```
+
+## como-arreglar-problema-cors-netcore
+
+# Solucionar problema CORS en .Net Core 5
+
+Un par de lineas para solucionar el problema de CORS en API .Net Core 5
+
+En [mi canal de youtube](https://youtu.be/CDEaBtEeVwM) hay un video del paso a paso:
+
+- Poner en el archivo startup en la seccion de servicios
+```csharp
+services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder => { 
+        builder
+        .AllowAnyOrigin()
+        .AllowAnyHeader()
+        .AllowAnyMethod(); 
+    });
+});
+```
+
+- Poner en el archivo startup en la seccion de aplicaciones
+```csharp
+app.UseCors();
+```
+
+## como-buscar-librerias-flutter
+
+# Cómo buscar y encontrar librerias flutter
+
+Una página web para buscar librerias Flutter
+
+En [mi canal de youtube](https://youtu.be/DHhiFybG-Mg) hay un video del paso a paso:
+
+<a target="_blank" href="{{ page.link }}">https://fluttergems.dev/</a>
+
+## como-instalar-docker-portainer-
+
+# Cómo instalar docker en Raspbian linux
+
+Paso a paso para tener docker instalado junto con un administrador visual de contenedores en una Raspberry Pi.
+
+En [mi canal de youtube](https://youtu.be/EbKw0Dcaf6o) hay un video del paso a paso:
+
+Instalar docker
+```csharp
+sudo apt update
+sudo apt upgrade
+sudo apt install raspberrypi-kernel raspberrypi-kernel-headers
+curl -sSL https://get.docker.com | sh
+sudo usermod -aG docker pi
+sudo reboot
+docker version
+```
+
+Instalar Portainer
+```csharp
+docker run -itd -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /docker/portainer:/data portainer/portainer-ce
+localhost:9000
+docker ps
+```
+
+## como-instalar-windows-proxmox
+
+# Cómo instalar windows en proxmox
+
+Paso a paso para poder instalar una maquina virtual windows en Proxmox.
+
+En [mi canal de youtube](https://youtu.be/At5CpVwy-iY) hay un video del paso a paso:
+
+* Descargar ISO Windows y agregarlo a Proxmox
+* Descargar ISO <a target="_blank" href="{{ page.link }}">Windows VirtIO Drivers</a> y agregarlo a Proxmox
+* Crear maquina virtual
+* System = Qemu
+* Hard Disck = SCSI - cache write back
+* CPU = 4 cores
+* Network = VirtIO
+* Montar CDRoom con ISO VirtIO
+* Cargar drivers para instalacion desde el CDRoom
+* Instalar drivers del controlador desde el CDRoom
+* Instalar Guest Agent
+
+## como-saber-el-nombre-de-un-video-bloqueado-en-youtube
+
+# Cómo saber el nombre de un video bloqueado o borrado de youtube
+
+Paso a paso de cómo saber el nombre de un video borrado o bloqueado en una lista de reproducción en youtube.
+
+En [mi canal de youtube](https://youtu.be/5JCQUHk7rP4) hay un video del paso a paso:
+
+1. Buscar y dar clic en el video bloqueado o borrado
+2. Copiar la URL del video donde esta el código
+3. Abrir google
+4. Pegar la url del video y darle buscar
+5. Revisar los resultado en busqueda del nombre del video
+6. Copio el nombre del video en youtube y vuelvo a agregarlos a mi lista de reproducción
+
+## dark-linux-mint
+
+# Instalación Theme Arc-Dark Linux Mint
+
+A continuación describo los comandos de consola SSH para instalar en menos de 5 minutos el Theme Arc-Dark para Linux Mint.
+
+En [mi canal de youtube](https://bit.ly/2wSo5iD) hay un video del paso a paso:
+
+```csharp
+sudo rm -rf /usr/share/themes/{Arc,Arc-Darker,Arc-Dark}
+rm -rf ~/.local/share/themes/{Arc,Arc-Darker,Arc-Dark}
+rm -rf ~/.themes/{Arc,Arc-Darker,Arc-Dark}
+
+sudo apt-get install autoconf automake pkg-config libgtk-3-dev
+git clone https://github.com/horst3180/arc-theme --depth 1 && cd arc-theme
+
+./autogen.sh --prefix=/usr
+sudo make install
+```
+
+## delete-all-tables-sql
+
+# Cómo eliminar todas las tablas SQL
+
+Código SQL para eliminar todas las tablas de una base de datos SQL sin eliminar la base de datos
+
+En [mi canal de youtube](https://youtu.be/CDEaBtEeVwM) hay un video del paso a paso:
+
+```sql
+DECLARE @sql NVARCHAR(max)=''
+
+SELECT @sql += ' Drop table ' + QUOTENAME(TABLE_SCHEMA) + '.'+ QUOTENAME(TABLE_NAME) + '; '
+FROM   INFORMATION_SCHEMA.TABLES
+WHERE  TABLE_TYPE = 'BASE TABLE'
+
+Exec Sp_executesql @sql
+```
+
+## delete-inactive-contact-facebook
+
+# Cómo listar contactos inactivos de facebook
+
+Codigo javascript que nos permite listar todos los contactos inactivos de facebook y despues poder borrarlos
+
+En [mi canal de youtube](https://youtu.be/CDEaBtEeVwM) hay un video del paso a paso:
+
+```javascript
+let segundos = 0;
+
+function hacerScrollUnMinuto() {
+if(segundos < 10) {
+segundos++
+window.scrollBy(0, 1000)
+setTimeout(hacerScrollUnMinuto, 1000)
+}
+}
+function mostrarInactivos() {
+let activos = document.querySelectorAll('.right[data-store*=is_deactivated\\"\\:false')
+activos.forEach(p => p.parentElement.parentElement.parentElement.parentElement.remove())
+window.scrollBy(0, 1000)
+}
+```
+
+## dependencias-package-npm
+
+# Cómo arreglar dependencias NPM package.json
+
+Paso a paso para arreglar las dependencias registradas en el package.json y poder correr los proyectos correctamente
+
+En [mi canal de youtube](https://youtu.be/ut9QZQX2_as) hay un video del paso a paso:
+
+```csharp
+//Instalamos
+npm i -g npm-check-updates
+
+//ejecutamos
+ncu -u
+```
+
+## deploy-api-netcore-aws
+
+# Cómo hacer deploy App Net Core en AWS
+
+
+Código paso a paso para desplegar un proyecto API Net Core en AWS Elastic Beanstalk.
+
+En [mi canal de youtube](https://youtu.be/9yIJg7i-Xxo) hay un video del paso a paso:
+
+1. Crear Aplicación Elastic Beanstalk
+- Application Name / Enviroment / Domain / Platform Linux
+- Create Service Role
+- Create EC2 Intance Profile / IAM
+- Create Role / AWS Service / UseCase = EC2
+- Add Policies = WebTier / WorkerTier / MulticontainerDocker
+- VPC / Public IP Address = Activated / Instance Subnets 
+- EC2 Security Gropus = default
+ 
+2. Configurar Visual Studio
+- Crear Usuario / Crear Grupo / Crear Role = administrator
+- Descargar e Instalar = AWS Toolkit for Visual Studio
+- Crear perfil / Access Key / Secret Key
+
+## deploy-nextjs-to-heroku
+
+# Cómo hacer Deploy de una app next.js en Heroku
+
+Un par de lineas necesarias para poder hacer deploy correctamente de una aplicación next.js desde Github a Heroku.
+
+En [mi canal de youtube](https://youtu.be/5Kk3DcBNROE) hay un video del paso a paso:
+
+```react
+"start": "next start -p $PORT",
+"heroku-postbuild": "npm run build"
+```
+
+## deploy-react-app-github
+
+# Cómo desplegar una app React + Vite a Github Pages
+
+
+Código paso a paso para hacer un deploy de una aplicación React + Vite en Github Pages.
+
+En [mi canal de youtube](https://youtu.be/QZ7y90shOPY) hay un video del paso a paso:
+--- 
+1 Creamos un proyecto React + Vite 
+```react
+npm create vite@latest
+```
+
+2 Creamos un repositorio en Github
+
+3 Iniciamos y configuramos el git en el nuevo proyecto
+
+4 Agregamos al package.json
+```react
+"homepage": "https://juandavid.site/reactapp" 
+"predeploy":"npm run build",
+"deploy":"gh-pages -d dist",
+```
+
+5 Agregamos al vite.config.ts
+```react
+base: "https://juandavid.site/reactapp"
+```
+
+6 Instalamos libreria gh-pages
+```react
+pnpm add gh-pages -D
+```
+
+7 Ejecutamos
+```react
+npm run deploy
+```
+
+## deploy-react-aws
+
+# Cómo hacer deploy de react.js en AWS
+
+
+Código paso a paso para desplegar un proyecto React.JS en AWS Elastic Beanstalk.
+
+En [mi canal de youtube](https://youtu.be/YmArl7GQqCc) hay un video del paso a paso:
+
+1. Crear S3
+- Block all public access
+- Properties / Static website hosting / index.html
+- Bucket policy / S3 / GetObject
+- "Principal": "*"
+ 
+2. Crear proyecto Reat.JS
+- npx create-react-app reactapp
+- npm run build
+    
+4. Hacer deploy
+- login en aws
+- https://aws.amazon.com/es/cli/
+- aws --version
+- aws configure
+```csharp
+Default region name [None]: us-west-2
+Default output format [None]: json
+```   
+- aws s3 sync build/ s3://reactapp-bucket
+
+## descargar-iso-windows10
+
+# Cómo descargar ISO windows 10 desde Microsoft
+
+Paso a paso para descargar el ISO original de windows 10 desde Microsoft
+
+En [mi canal de youtube](https://youtu.be/SUPPpapA3lg) hay un video del paso a paso:
+
+1. Buscar en google "windows 10 iso"
+2. Entrar en la primera respuesta que es la pagina original de Microsoft
+3. Inspeccionar la pagina
+4. Ver en version movil
+5. Simular Ipad
+6. Seleccionar edicción e idioma
+7. Seleccionar 32bit o 64bit
+
+## docker-servidor-Jekyll
+
+# Cómo ejecutar un proyecto Jekyll localmente
+
+
+Paso a paso para correr un proyecto Jeckyll localmente y poder editarlo.
+
+En [mi canal de youtube](https://youtu.be/WRT0RgIEXus) hay un video del paso a paso:
+
+1. Crear archivo docker-compose.yaml
+```csharp
+services:
+  jekyll:
+    image: jekyll/jekyll
+    command: jekyll serve --watch --host 0.0.0.0
+    ports:
+"4000:4000"
+    volumes:
+.:/srv/jekyll
+```
+
+## drivers-online-gratis
+
+# Cómo descargar e instalar drivers facil y rápido
+
+Paso a paso para bajar aplicativo que analiza nuestro equipo y automaticamente baja los drivers y los instala por nosotros. Adicional a esto tiene un paquete extenso de programas muy útiles, herramientas de administracion, seguridad y otros que pueden ser instalados al tiempo
+
+En [mi canal de youtube](https://youtu.be/GJ-GbLifU2Q) hay un video del paso a paso:
+
+1. Ingresar a la página: <a target="_blank" href="https://driverpack.io/es">https://driverpack.io/es</a>
+2. Descargar instalador .exe
+3. Activar modo experto
+4. Activar o desactivar programas y/o drivers
+5. Instalar y reiniciar el equipo
+
+## encriptacion-aes-facturacion-electronica-cadena
+
+# Encriptación factura electrónica AES
+
+Este tutorial es un código muy simple para encriptar los números de facturas electrónicas y poderlas bajar en PDF desde la plataforma de CADENA
+
+En [mi canal de youtube](https://youtu.be/Sp00ZqfBnM4) hay un video del paso a paso:
+
+```csharp
+private static readonly int tamanyoClave = 32;
+private static readonly int tamanyoVector = 16;
+// Define la palabra clave para el cifrado y
+private static readonly string Clave = "Cadena_clave_para_cifrar";
+private static readonly string Vector = "m2PCs0Ju9m1u3AIPkO3RUQ==";
+// se convierte el vector y la key a bytes
+public static byte[] Key = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(Clave));
+public static byte[] IV = Convert.FromBase64String(Vector);
+
+Array.Resize(ref Key, tamanyoClave);
+Array.Resize(ref IV, tamanyoVector);
+Rijndael RijndaelAlg = Rijndael.Create();
+MemoryStream memoryStream = new MemoryStream();
+CryptoStream cryptoStream = new CryptoStream(memoryStream, RijndaelAlg.CreateEncryptor(Key, IV), CryptoStreamMode.Write);
+byte[] txtPlanoBytes = UTF8Encoding.UTF8.GetBytes(txtPlano);
+cryptoStream.Write(txtPlanoBytes, 0, txtPlanoBytes.Length);
+cryptoStream.FlushFinalBlock();
+byte[] cipherMessageBytes = memoryStream.ToArray();
+memoryStream.Close();
+cryptoStream.Close();
+var numeroDeFacturaEncriptado = Convert.ToBase64String(cipherMessageBytes);
+```
+
+## entity-user-net-core-5
+
+# Cómo instalar EntityUser y JWT NetCore 5
+
+Paso a paso para instalar el servicio EntityUser que trae por defecto .Net Core 5 y activar JWT para el login de usuarios desde un front-end
+
+En [mi canal de youtube](https://youtu.be/EbKw0Dcaf6o) hay un video del paso a paso:
+
+- Crear la carpeta Models
+- Crear el modelo: ApplicationUser
+```csharp
+public class ApplicationUser : IdentityUser
+{
+}
+```
+- Crear un modelo de prueba
+- Crear un controlador de prueba para el modelo de prueba
+- Renombrar el DbContext por: ApplicationDbContext
+- Actualizar el DbContext
+
+```csharp
+: IdentityDbContext<ApplicationUser>
+```
+
+- Actualizar el ConnectionString
+- Actualizar dependencias
+- Crear migracion
+- Actualizar base de datos
+- Crear modelo: RegisterModel
+
+```csharp
+[Required(ErrorMessage ="User Name is required")]
+public string Username { get; set; }
+
+[EmailAddress]
+[Required(ErrorMessage = "Email is required")]
+public string Email { get; set; }
+
+[Required(ErrorMessage = "Password is required")]
+public string Password { get; set; }
+```
+
+- Crear modelo: LoginModel
+
+```csharp
+[Required(ErrorMessage = "User Name is required")]
+public string Username { get; set; }
+
+[Required(ErrorMessage = "Password is required")]
+public string Password { get; set; }
+```
+
+- Crear el controlador: AccountController
+- Agregar el constructor al controlador
+
+```csharp
+private readonly UserManager<ApplicationUser> userManager;
+private readonly RoleManager<IdentityRole> roleManager;
+private readonly IConfiguration _configuration;
+
+public AccountController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
+{
+    this.userManager = userManager;
+    this.roleManager = roleManager;
+    _configuration = configuration;
+}
+```
+
+- Agregar el metodo registrar dentro del controlador
+
+```csharp
+[HttpPost]
+[Route("register")]
+public async Task<IActionResult> Register([FromBody] RegisterModel model)
+{
+    var userExists = await userManager.FindByNameAsync(model.Username);
+    if (userExists != null)
+        return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User already exists!" });
+
+    ApplicationUser user = new ApplicationUser()
+    {
+        Email = model.Email,
+        SecurityStamp = Guid.NewGuid().ToString(),
+        UserName = model.Username
+    };
+    var result = await userManager.CreateAsync(user, model.Password);
+    if (!result.Succeeded)
+        return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User creation failed! Please check user details and try again." });
+
+    return Ok(new Response { Status = "Success", Message = "User created successfully!" });
+}
+```
+
+- Agregar en metodo login dentro del controlador
+
+```csharp
+[HttpPost]
+[Route("login")]
+public async Task<IActionResult> Login([FromBody] LoginModel model)
+{
+    var user = await userManager.FindByNameAsync(model.Username);
+    if (user != null && await userManager.CheckPasswordAsync(user, model.Password))
+    {
+        var userRoles = await userManager.GetRolesAsync(user);
+
+        var authClaims = new List<Claim>
+        {
+            new Claim(ClaimTypes.Name, user.UserName),
+            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+        };
+
+        foreach (var userRole in userRoles)
+        {
+            authClaims.Add(new Claim(ClaimTypes.Role, userRole));
+        }
+
+        var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:SecretKey"]));
+
+        var token = new JwtSecurityToken(
+            issuer: _configuration.GetSection("JWT:ValidIssuer").Value,
+            audience: _configuration.GetSection("JWT:ValidAudience").Value,
+            expires: DateTime.Now.AddHours(3),
+            claims: authClaims,
+            signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
+        );
+
+        return Ok(new
+        {
+            token = new JwtSecurityTokenHandler().WriteToken(token),
+            expiration = token.ValidTo
+        });
+    }
+    return Unauthorized();
+}
+```
+
+- Agregamos los servicios en startup
+
+```csharp
+// For Identity
+services.AddIdentity<ApplicationUser, IdentityRole>()
+.AddEntityFrameworkStores<ApplicationDbContext>()
+.AddDefaultTokenProviders();
+
+// Adding Authentication
+services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+
+// Adding Jwt Bearer
+.AddJwtBearer(options =>
+{
+    options.SaveToken = true;
+    options.RequireHttpsMetadata = false;
+    options.TokenValidationParameters = new TokenValidationParameters()
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidAudience = Configuration.GetSection("JWT:ValidAudience").Value,
+        ValidIssuer = Configuration.GetSection("JWT:ValidIssuer").Value,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration.GetSection("JWT:SecretKey").Value))
+    };
+});
+```
+
+- Actualizamos el servicio de Swagger en startup
+
+```csharp
+services.AddSwaggerGen(swagger =>
+{
+    //This is to generate the Default UI of Swagger Documentation
+    swagger.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Version = "v1",
+        Title = "ASP.NET 5 Web API",
+        Description = "Authentication and Authorization in ASP.NET 5 with JWT and Swagger"
+    });
+    // To Enable authorization using Swagger (JWT)
+    swagger.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Enter 'Bearer' [space] and then your valid token in the text input below.\r\n\r\nExample: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\"",
+    });
+    swagger.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] {}
+        }
+    });
+});
+```
+
+- Agregamos las aplicaciones en startup
+
+```csharp
+app.UseAuthentication();
+app.UseAuthorization();
+```
+
+- Agregamos al: appsettings
+
+```csharp
+"JWT": {
+  "SecretKey": "LJLKSFJYEWIYEWBBLKASJDASDASDTWEBNVASNBDVCAS",
+  "ValidAudience": "https://localhost:44324",
+  "ValidIssuer": "https://localhost:44324"
+}
+```
+- Proteger los metodos con: [Authorize]
+
+## error-tinta-canon-g3100-G3000-series
+
+# Problema Impresora Canon G3100 - G3000 series
+
+A continuación doy una solución rápida al problema de aire en las mangueras de una impresora Canon G3100 o G3000 Series, que hace que algunos colores o un color no imprima correctamente.
+
+En [mi canal de youtube](https://youtu.be/KvldwGjCg5M) hay un video del paso a paso:
+
+Hay tres niveles de mantenimeinto para este problema (Limpieza del cabezal de impresión: Standar, A fondo y profundo). Cada una de ellas lleva un consumo mayor de tiempo y de tinta para realizarse.
+
+1. Lo primero a revisar el nivel de tinta (no debe estar en el nivel mas bajo), pues lo que vamos a hacer genera un gasto importante de tinta y los manuales dicen que si se queda sin tinta se pueden generar problemas graves al sistema.
+2. Nivel uno: Limpieza del cabezal de impresión Standar (mantenga pulsado el botón Parar (Stop) hasta que la luz de Alarma (Alarm) parpadee 2 veces y, a continuación, suelte el botón.)
+3. Revisar si el problema esta resuelto con la impresion de un patron de prueba (mantenga pulsado el botón Parar (Stop) hasta que la luz de Alarma (Alarm) parpadee 1 vez y, a continuación, suelte el botón.) 
+4. Nivel dos: Limpieza del cabezal de impresión a fondo (mantenga pulsado el botón Parar (Stop) hasta que la luz de Alarma (Alarm) parpadee 3 veces y, a continuación, suelte el botón.)
+5. Revisar si el problema esta resuelto con la impresion de un patron de prueba (mantenga pulsado el botón Parar (Stop) hasta que la luz de Alarma (Alarm) parpadee 1 vez y, a continuación, suelte el botón.)
+6. Nivel tres: Limpieza del cabezal de impresión Profundo (mantenga pulsado el botón Parar (Stop) hasta que la luz de Alarma (Alarm) parpadee 5 veces y, a continuación, suelte el botón.)
+
+Este ultimo nivel es la limpieza más profunda, que más tiempo lleva realizarla y que más tinta consume
+
+## expert-advisor-metatrader5
+
+# Cómo crear un Expert Advisor metatrader 5
+
+
+Código paso a paso para crear un expert advisor que nos ayude a administrar las posiciones que vamos abriendo manualmente.
+
+En [mi canal de youtube](https://youtu.be/rcEfVyMp8XE) hay un video del paso a paso:
+ 
+1. Crear un nuevo proyecto.
+
+2. Crear variables:
+   - globalTrailing
+   - globaltrailingStop
+   - globalStopLoss
+   - globalSpread
+
+4. Copiar codigo:
+   
+```php
+//+------------------------------------------------------------------+
+//|                                                      vikingo.mq5 |
+//|                                  Copyright 2023, MetaQuotes Ltd. |
+//|                                             https://www.mql5.com |
+//+------------------------------------------------------------------+
+#property copyright "Copyright 2023, MetaQuotes Ltd."
+#property link      "https://www.mql5.com"
+#property version   "1.00"
+
+#include <Trade\Trade.mqh>
+CTrade trade;
+
+//--- input parameters
+input int globalTrailing;
+input int globalTrailingStop;
+input int globalStopLoss;
+input int globalSpread;
+
+bool     test = false;
+bool     globalPositionInit = true;
+long     globalPositionTrailing;
+double   globalTickValue;
+ulong    globalTicket;
+string   globalSymbol;
+string   globalPositionSymbol;
+long     globalPositionType;
+long     globalPositionOpen;
+long     globalPositionStop;
+double   globalGross;
+long     globalPrice;
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+  {
+//---
+   globalSymbol = Symbol();
+   globalTickValue = SymbolInfoDouble(Symbol(), SYMBOL_TRADE_TICK_VALUE);
+//---
+   return(INIT_SUCCEEDED);
+  }
+
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void OnTick()
+  {
+   if(test)
+     {
+      ulong ticket = trade.Buy(0.01, Symbol(), SymbolInfoDouble(Symbol(), SYMBOL_ASK));
+      //ulong ticket = trade.Sell(0.01, Symbol(), SymbolInfoDouble(Symbol(), SYMBOL_BID));
+      test = false;
+     }
+   int total = PositionsTotal();
+   if(total > 0)
+     {
+      globalTicket = PositionGetTicket(0);
+      globalGross = PositionGetDouble(POSITION_PROFIT);
+      globalPositionSymbol = PositionGetString(POSITION_SYMBOL);
+      globalPositionOpen = priceConvert(PositionGetDouble(POSITION_PRICE_OPEN));
+      globalPositionType = PositionGetInteger(POSITION_TYPE);
+
+      if(globalPositionType == POSITION_TYPE_SELL)
+        {
+         globalPrice = priceConvert(SymbolInfoDouble(globalPositionSymbol, SYMBOL_ASK));
+         if(globalPositionInit)
+           {
+            globalPositionStop = globalPositionOpen + globalStopLoss;
+            globalPositionTrailing = globalPositionOpen - globalTrailing - globalSpread;
+            globalPositionInit = false;
+           }
+
+         if(globalPrice <= globalPositionTrailing && globalGross > 0)
+           {
+            globalPositionTrailing = globalPrice - globalTrailing;
+            globalPositionStop = globalPrice + globalTrailingStop;
+           }
+
+         if(globalPrice >= globalPositionStop)
+           {
+            bool result = trade.PositionClose(globalTicket);
+            if(result)
+              {
+               resetInit();
+              }
+            else
+              {
+               Print("No se pudo cerrar la posición de venta");
+              }
+           }
+        }
+      else
+         if(globalPositionType == POSITION_TYPE_BUY)
+           {
+            globalPrice = priceConvert(SymbolInfoDouble(globalPositionSymbol, SYMBOL_BID));
+            if(globalPositionInit)
+              {
+               globalPositionStop = globalPositionOpen - globalStopLoss;
+               globalPositionTrailing = globalPositionOpen + globalTrailing + globalSpread;
+               globalPositionInit = false;
+              }
+
+            if(globalPrice >= globalPositionTrailing && globalGross > 0)
+              {
+               globalPositionTrailing = globalPrice + globalTrailing;
+               globalPositionStop = globalPrice - globalTrailingStop;
+              }
+
+            if(globalPrice <= globalPositionStop)
+              {
+               bool result = trade.PositionClose(globalTicket);
+               if(result)
+                 {
+                  resetInit();
+                 }
+               else
+                 {
+                  Print("No se pudo cerrar la posición de compra");
+                 }
+              }
+           }
+      Print("Ticket: ", globalTicket, " Apertura: ", globalPositionOpen, " Profit: ", globalGross, " Precio: ", globalPrice, " Trail: ", globalPositionTrailing, " Stop: ", globalPositionStop);
+     }
+   else
+     {
+      resetInit();
+     }
+  }
+
+//+------------------------------------------------------------------+
+//| PRICE CONVERT                                                    |
+//+------------------------------------------------------------------+
+long priceConvert(double price)
+  {
+   string price_str = DoubleToString(price, 5);
+   string parts[];
+   int count = StringSplit(price_str, '.', parts);
+   if(StringLen(parts[1])==4)
+     {
+      parts[1] = parts[1] + "0";
+     }
+   long price_int = StringToInteger(parts[0] + parts[1]);
+   return price_int;
+  }
+//+------------------------------------------------------------------+
+
+//+------------------------------------------------------------------+
+//| RESET INIT                                                       |
+//+------------------------------------------------------------------+
+void resetInit()
+  {
+   globalPositionInit = true;
+   globalPositionTrailing = 0;
+   globalTickValue = 0;
+   globalTicket = 0;
+   globalSymbol = "";
+   globalPositionSymbol = "";
+   globalPositionType = 0;
+   globalPositionOpen = 0;
+   globalPositionStop = 0;
+   globalGross = 0;
+   globalPrice = 0;
+  }
+//+------------------------------------------------------------------+
+
+//+------------------------------------------------------------------+
+//| UPDATE STOPLOSS                                                  |
+//+------------------------------------------------------------------+
+void setStopLoss()
+  {
+   double priceOpen = PositionGetDouble(POSITION_PRICE_OPEN);
+   double tickSize = SymbolInfoDouble(_Symbol, SYMBOL_TRADE_TICK_SIZE);
+   double newStopLoss = priceOpen - globalStopLoss * tickSize;
+   trade.OrderModify(globalTicket, 0, priceOpen, newStopLoss, 0, CLR_NONE);
+  }
+//+------------------------------------------------------------------+
+
+## exportar-CSV-firebase
+
+# Cómo importar un excel o CSV a firebase firestore
+
+Paso a paso para importar un archivo excel o CSV a una base de datos firestore de firebase 
+
+En [mi canal de youtube](https://youtu.be/ut9QZQX2_as) hay un video del paso a paso:
+
+Ingresamos a consola
+- https://console.cloud.google.com
+
+```
+gcloud config set project IDPROJECT
+mkdir csv
+npm init
+npm install @google-cloud/firestore
+npm install csv-parse
+touch csvExport.js
+node csvExport.js archivo.csv
+```
+
+```javascript
+const {readFile}  = require('fs').promises;
+const {promisify} = require('util');
+const parse       = promisify(require('csv-parse'));
+const {Firestore} = require('@google-cloud/firestore');
+
+if (process.argv.length < 3) {
+  console.error('Please include a path to a csv file');
+  process.exit(1);
+}
+
+
+const db = new Firestore();
+
+function writeToFirestore(records) {
+  const batchCommits = [];
+  let batch = db.batch();
+  records.forEach((record, i) => {
+    var docRef = db.collection('fasecolda').doc(record.Codigo);
+    batch.set(docRef, record);
+    if ((i + 1) % 500 === 0) {
+      console.log(`Writing record ${i + 1}`);
+      batchCommits.push(batch.commit());
+      batch = db.batch();
+    }
+  });
+  batchCommits.push(batch.commit());
+  return Promise.all(batchCommits);
+}
+
+async function importCsv(csvFileName) {
+  const fileContents = await readFile(csvFileName, 'utf8');
+  const records = await parse(fileContents, { columns: true });
+  try {
+    await writeToFirestore(records);
+  }
+  catch (e) {
+    console.error(e);
+    process.exit(1);
+  }
+  console.log(`Wrote ${records.length} records`);
+}
+
+importCsv(process.argv[2]).catch(e => console.error(e));
+```
+
+## instalacion-configuracion-raspberry
+
+# Cómo instalar Raspbian en Raspberry Pi
+
+Listado de cosas por instalar en una Raspberry, otras aplicaciones y configuraciones.
+
+En [mi canal de youtube](https://youtu.be/m60_OxnNz5s) hay un video del paso a paso:
+
+Raspberry Pi Image
+```csharp
+https://www.raspberrypi.com/software/
+```
+
+Aplicación para saber la ip: 
+```csharp
+https://www.advanced-ip-scanner.com/
+```
+
+Instalar escritorio remoto: 
+```csharp
+sudo apt update
+sudo apt upgrade
+sudo reboot
+sudo apt install xrdp
+```
+
+## instalacion-evolution-api
+
+# Cómo instalar Evolution-api en Docker Desktop
+
+
+Paso a paso para instalar Evolution-API con un sólo comando.
+
+En [mi canal de youtube](https://youtu.be/rSuEqJ1YvwQ) hay un video del paso a paso:
+
+1. Instalar GIT
+2. Instalar Docker Desktop
+
+Ejecutar en PowerShell
+```csharp
+git clone https://github.com/codigo8a/evolution-api-script.git
+cd evolution-api-script
+& "C:\Program Files\Git\bin\bash.exe"
+./evolution.sh
+```
+Usar la Api Key Global
+```csharp
+429683C4C977415CAAFCCE10F7D57E11
+```
+
+## instalacion-laravel-amazon
+
+# Instalación Laravel SSH Servidor UBUNTU
+
+A continuación describo linea a linea lo que hay que hacer en la consola SSH para tener en menos de 10 minutos un proyecto Laravel corriendo en un servidor UBUNTU (AWS Amazon Web Services).
+
+En [mi canal de youtube](https://www.youtube.com/watch?v=nExuiPqHkVA) hay un video del paso a paso: 
+
+```
+sudo apt-get update
+sudo apt-get install apache2 -y
+echo $USER 
+sudo nano /etc/apache2/envvars
+export APACHE_RUN_USER=ubuntu
+export APACHE_RUN_GROUP=ubuntu
+sudo chown ubuntu:ubuntu /var/www/html -R
+sudo a2enmod rewrite
+sudo nano /etc/apache2/sites-available/000-default.conf
+
+<Directory "/var/www/html/">
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+</Directory>
+
+sudo systemctl restart apache2
+sudo apt-add-repository ppa:ondrej/php
+sudo apt-get update
+sudo apt install php7.2 libapache2-mod-php7.2 php7.2-mbstring php7.2-xmlrpc php7.2-soap php7.2-gd php7.2-xml php7.2-cli php7.2-zip zip unzip -y
+sudo apt-get install git
+cd /tmp
+wget https://getcomposer.org/composer.phar
+sudo mv composer.phar /bin/composer
+sudo chmod 755 /bin/composer
+composer global require "laravel/installer"
+sudo nano ~/.profile
+
+export PATH=$PATH:/home/ubuntu/.config/composer/vendor/bin
+
+sudo reboot
+cd /var/www/html/
+laravel new aplication-sample
+
+//Si no ha configurado la swap
+free -m
+sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
+sudo /sbin/mkswap /var/swap.1
+sudo /sbin/swapon /var/swap.1
+```
+
+## instalacion-portainer-linux
+
+# Cómo instalar docker en Ububtu Server linux
+
+
+Paso a paso para tener docker instalado junto con un administrador visual de contenedores.
+
+En [mi canal de youtube](https://youtu.be/N1C96pBweWY) hay un video del paso a paso:
+
+Instalar docker
+```csharp
+sudo apt update
+sudo apt upgrade
+curl -sSL https://get.docker.com | sh
+sudo usermod -aG docker pi
+sudo reboot
+docker version
+```
+
+Instalar Portainer
+```csharp
+docker run -itd -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v /docker/portainer:/data portainer/portainer-ce
+localhost:9000
+docker ps
+```
+
+## instalacion-wiki-dokuwiki
+
+# Instalación Sistema Wiki DOKUWIKI
+
+A continuación describo linea a linea lo que hay que hacer en la consola SSH para tener en menos de 5 minutos un proyecto de <a target="_blank" href="{{ page.dokuwiki }}">documentación WIKI usando DOKUWIKI</a>.
+
+En [mi canal de youtube](https://bit.ly/2wSo5iD) hay un video del paso a paso: 
+
+```
+git clone https://github.com/splitbrain/dokuwiki.git
+sudo chmod -R 755 /dokuwiki/data/
+
+//ejecutar dominio-IP/dokuwiki/install.php
+```
+
+### Mini-tutorial de manejo 
+1. Cómo crear un pagina nueva
+2. Cómo crear una pagina dentro de una sección
+3. Cómo activar url amigables
+
+## instalar-windows-store
+
+# Cómo instalar tienda de windows Microsoft Store
+
+
+Código paso a paso para instalar la tienda de windows "Microsoft Store".
+
+En [mi canal de youtube](https://youtu.be/-wq8jncHdPI) hay un video del paso a paso:
+ 
+1. Abrir Power Shell.
+
+2. Ejecutar codigo
+```csharp
+Get-AppxPackage -allusers Microsoft.WindowsStore | Foreach {Add-AppxPackage -DisableDevelopmentMode -Register "$($_.InstallLocation)\AppXManifest.xml"}
+```
+
+## menu-imagenes-joomla
+
+# Menú JOOMLA con imagenes
+
+Codigo javascript para manejo de menus en joomla con imagenes (Hover y Active)
+
+En [mi canal de youtube](https://youtu.be/2NfTcPnlSpc) hay un video del paso a paso: 
+
+![ejemplo menu](https://raw.githubusercontent.com/juandavid8a/javascript-menu-images-joomla/master/menu-images.gif)
+
+Es un código rápido para poder manejar menus en joomla sólo con imagenes, esta dividido en dos partes:
+* Revisamos si hay algun item del menu con submenus y los desHabilitamos (si se quiere que aparezcan solo se bede comentar el FOR de los subItem)
+* Recorre los item que contienen la clase "menu-hover" y revisa si el parent tiene la clase "active", osea que ya se le dio clic a un menú, obtiene la url de la imagen y modifica la etiqueta IMG asignandole una nueva url con la imagen que contiene la terminación "-hover" por defecto
+* La segunda parte del codigo reacciona al posicionar el mouse sobre cualquier item del menu y busca automaticamente las imagenes con terminacion "-hover" de cada uno y genera el efecto hover.
+
+```javascript
+imageOver=[];	
+var items = document.getElementsByClassName("menu-hover");
+var subItems = document.getElementsByClassName("sp-has-child");
+
+//Revisamos si hay submenus y los deshabilitamos
+for (i = 0; i < subItems.length; i++) {
+	subItems[i].classList.remove("sp-has-child");
+}
+var i;
+//Revisamos si hay algun parent con active y le remplazamos la imagen por el hover
+for (i = 0; i < items.length; i++) {
+	if(items[i].parentNode.className.indexOf("active") > 0){
+		var img = items[i].firstChild.attributes["src"].nodeValue;
+		imageOver = img.split(".");
+		items[i].firstChild.src=imageOver[0]+'-hover.'+imageOver[1];
+		items[i].classList.remove("menu-hover");
+	}
+} 	
+//Esperamos a que el mouse pase por un menu y realizamos el efecto hover  
+$(".menu-hover").hover(function(){
+	var img = $(this).find('img').attr('src');
+	imageOver = img.split(".");
+	$(this).find('img').attr('src', imageOver[0]+'-hover.'+imageOver[1])
+}, function() {
+	$(this).find('img').attr('src', imageOver[0]+'.'+imageOver[1])
+});
+```
+
+### Requiere dos imagenes:
+* nombreDelaImagen.png
+* nombreDeLaImagen-hover.png
+
+### Si es para usar en JOOMLA:
+Poner clase CSS "menu-hover" en cada menu para que el código sepa sobre cual o cuales menus debe activarse y buscar las imagenes con terminacion "-hover" y generar el efecto.
+
+### Si es para usar fuera de JOOMLA esta debe ser la estructura:
+
+```html
+<ul class="sp-megamenu-parent menu-fade hidden-sm hidden-xs">
+      <li class="sp-menu-item current-item active">
+          <a class="menu-hover" href="/web/index.php/nuestra-escencia">
+            <img src="/web/images/menu-nuestra-esencia-hover.png" alt="Nuestra Escencia">
+          </a>
+      </li>
+      <li class="sp-menu-item">
+          <a class="menu-hover" href="/web/index.php/fresh-perfum">
+              <img src="/web/images/menu-tu-esencia.png" alt="Tu esencia">
+          </a>
+      </li>
+      <li class="sp-menu-item">
+          <a class="" href="/web/index.php/esencias">
+              <img src="/web/images/menu-esencias.png" alt="Esencias">
+          </a>
+      </li>
+</ul>
+```
+
+## net-core-clean-arquitecture
+
+# Cómo integrar Clean Arquitecture a Net Core 7
+
+Codigo paso a paso para integrar Clean Arquitecture a Net Core 7.
+
+En [mi canal de youtube](https://youtu.be/vItyn5jd-k8) hay un video del paso a paso:
+
+1 Creamos una Blank Solution
+
+2 Agregamos proyecto API .Api
+- Controllers
+- Responses
+  
+3 Agregamos proyecto Class Library .Core
+- DTOs
+- Entities
+- Enumerations
+- Interfaces
+- Exceptions
+- QueryFilters
+- Services
+  
+4 Agregamos proyecto Class Library .Infrastructure
+- Data
+- Repositories
+- Filters
+- Mappings
+- Validators
+
+5 Reference
+- .API = .Core, .Infrastructure
+- .Infrastructure = .Core
+
+6 Ingresamos al appsettings:
+```csharp
+,
+"MongoDbSettings": {
+  "ConnectionString": "url",
+  "DatabaseName": "namestring"
+}
+```
+
+7 Creamos MongoDbSettingsEntity:
+```csharp
+public string ConnectionString { get; set; } = string.Empty;
+public string DatabaseName { get; set; } = string.Empty;
+```
+
+8 Instalamos paquetes:
+```csharp
+MongoDB.Bson
+MongoDB.Driver
+Microsoft.Extensions.Options
+AspNetCore.Identity.MongoDbCore
+```
+
+9 Agregamos al program:
+```csharp
+builder.Services.Configure<MongoDbSettingsEntity>(builder.Configuration.GetSection(nameof(MongoDbSettings)));
+```
+
+10 Creamos el UserEntity:
+```csharp
+[BsonIgnoreExtraElements]
+public class UserEntity
+{
+    [BsonId]
+    [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
+    public string Id { get; set; } = string.Empty;
+    public string Username { get; set; } = string.Empty;
+    public string Fullmane { get; set; } = string.Empty;
+    public string Email { get; set; } = string.Empty;
+}
+```
+
+11 Creamos IUserRepository y IUserService:
+```csharp
+Task<List<UserEntity>> GetAll();
+```
+
+12 Creamos IContext:
+```csharp
+IMongoCollection<UserEntity> Users { get;  }
+```
+
+13 Creamos Context:
+```csharp
+public class Context : IContext
+{
+    private readonly IMongoDatabase _database;
+    public Context(IOptions<MongoDbSettingsEntity> options)
+    {
+        MongoClient _mongoClient = new MongoClient(options.Value.ConnectionString);
+        _database = _mongoClient.GetDatabase(options.Value.DatabaseName);
+    }
+    public IMongoCollection<UserEntity> Users => _database.GetCollection<UserEntity>("users");
+}
+```
+
+14 Creamos UserRepository:
+```csharp
+public class UserRepository : IUserRepository
+{
+    private readonly IContext _context;
+    public UserRepository(IContext context)
+    {
+        _context = context;
+    }
+    public async Task<List<UserEntity>> GetAll() => await _context.Users.Find(_ => true).ToListAsync();
+}
+```
+
+15 Creamos UserService:
+```csharp
+public class UserService : IUserService
+{
+    private readonly IUserRepository _userRepository;
+    public UserService(IUserRepository userRepository)
+    {
+        _userRepository = userRepository;
+    }
+    public Task<List<UserEntity>> GetAll()
+    {
+        return _userRepository.GetAll();
+    }
+}
+```
+
+16 Creamos UserService:
+```csharp
+public class UserService : IUserService
+{
+    private readonly IUserRepository _userRepository;
+    public UserService(IUserRepository userRepository)
+    {
+        _userRepository = userRepository;
+    }
+    public Task<List<UserEntity>> GetAll()
+    {
+        return _userRepository.GetAll();
+    }
+}
+```
+
+17 Agregamos al program:
+```csharp
+builder.Services.AddSingleton<IUserService, UserService>();
+builder.Services.AddSingleton<IUserRepository, UserRepository>();
+```
+
+18 Creo UserController:
+```csharp
+[Route("api/[controller]")]
+[ApiController]
+public class UserController : ControllerBase
+{
+    private readonly IUserService _userService;
+    public UserController(IUserService userService)
+    {
+        _userService = userService;
+    }
+
+    // GET: api/<UserController>
+    [HttpGet]
+    public async Task<List<UserEntity>> GetAll()
+    {
+        return await _userService.GetAll();
+    }
+}
+```
+
+## net-core-mongo-jwt
+
+# Cómo usar EntityUser y JWT con MongoDB
+
+Codigo paso a paso para integrar EntityUser y JWT con MongoDB.
+
+En [mi canal de youtube](https://youtu.be/f1hoUoB16NI) hay un video del paso a paso:
+
+Instalamos paquetes:
+```csharp
+AspNetCore.Identity.MongoDbCore
+MongoDB.Bson
+MongoDB.Driver
+Microsoft.AspNetCore.Authentication.JwtBearer
+```
+
+Ingresamos al appsettings:
+```csharp
+  ,
+"MongoDbSettings": {
+  "ConnectionString": "url",
+  "DatabaseName": "namestring"
+}
+```
+
+Creamos ApplicationUser:
+```csharp
+[CollectionName("users")]
+public class ApplicationUser : MongoIdentityUser<Guid>
+{
+    public string FullName { get; set; } = string.Empty;
+}
+```
+
+Creamos ApplicationRole:
+```csharp
+[CollectionName("roles")]
+public class ApplicationRole : MongoIdentityRole<Guid>
+{
+    
+}
+```
+
+Agregamos a Program.cs:
+```csharp
+// Add services to the container.
+builder.Services.Configure<MongoDbSettings>(builder.Configuration.GetSection(nameof(MongoDbSettings)));
+BsonSerializer.RegisterSerializer(new GuidSerializer(MongoDB.Bson.BsonType.String));
+BsonSerializer.RegisterSerializer(new DateTimeSerializer(MongoDB.Bson.BsonType.String));
+BsonSerializer.RegisterSerializer(new DateTimeOffsetSerializer(MongoDB.Bson.BsonType.String));
+
+//add mongoIdentityConfiguration...
+var mongoDbIdentityConfig = new MongoDbIdentityConfiguration
+{
+    MongoDbSettings = builder.Configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>(),
+    IdentityOptionsAction = options =>
+    {
+        options.Password.RequireDigit = false;
+        options.Password.RequiredLength = 8;
+        options.Password.RequireNonAlphanumeric = true;
+        options.Password.RequireLowercase = false;
+
+        //lockout
+        options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
+        options.Lockout.MaxFailedAccessAttempts = 5;
+        options.User.RequireUniqueEmail = true;
+    }
+};
+
+builder.Services.ConfigureMongoDbIdentity<ApplicationUser, ApplicationRole, Guid>(mongoDbIdentityConfig)
+    .AddUserManager<UserManager<ApplicationUser>>()
+    .AddSignInManager<SignInManager<ApplicationUser>>()
+    .AddRoleManager<RoleManager<ApplicationRole>>()
+    .AddDefaultTokenProviders();
+
+builder.Services.AddAuthentication(x =>
+{
+    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(x =>
+{
+    x.RequireHttpsMetadata = true;
+    x.SaveToken = true;
+    x.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidIssuer = "https://localhost:5001",
+        ValidAudience = "https://localhost:5001",
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("1swek3u4uo2u4a6e")),
+        ClockSkew = TimeSpan.Zero
+    };
+});
+
+builder.Services.AddSwaggerGen(setup =>
+{
+    // Include 'SecurityScheme' to use JWT Authentication
+    var jwtSecurityScheme = new OpenApiSecurityScheme
+    {
+        BearerFormat = "JWT",
+        Name = "JWT Authentication",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.Http,
+        Scheme = JwtBearerDefaults.AuthenticationScheme,
+        Description = "Put **_ONLY_** your JWT Bearer token on textbox below!",
+
+        Reference = new OpenApiReference
+        {
+            Id = JwtBearerDefaults.AuthenticationScheme,
+            Type = ReferenceType.SecurityScheme
+        }
+    };
+    setup.AddSecurityDefinition(jwtSecurityScheme.Reference.Id, jwtSecurityScheme);
+    setup.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        { jwtSecurityScheme, Array.Empty<string>() }
+    });
+});
+```
+
+Creamos LoginRequest Dto:
+```csharp
+[Required, EmailAddress]
+public string Email { get; set; } = string.Empty;
+[Required, DataType(DataType.Password)]
+public string Password { get; set; } = string.Empty;
+```
+
+Creamos RegisterRequest Dto:
+```csharp
+[Required, EmailAddress]
+public string Email { get; set; } = string.Empty;
+public string Username { get; set; } = string.Empty;
+[Required]
+public string FullName { get; set; } = string.Empty;
+
+[Required, DataType(DataType.Password)]
+public string Password { get; set; } = string.Empty;
+[Required, DataType(DataType.Password), Compare(nameof(Password), ErrorMessage = "Passwords do not match")]
+public string ConfirmPassword { get; set; } = string.Empty;
+```
+
+Creamos CreateRoleRequest Dto:
+```csharp
+public string Role { get; set; } = string.Empty;
+```
+
+Creamos LoginResponse Dto:
+```csharp
+public bool Success { get; set; }
+public string AccessToken { get; set; } = string.Empty;
+public string Email { get; set; } = string.Empty;
+public string UserId { get; set; } = string.Empty;
+public string Message { get; set; } = string.Empty;
+```
+
+Creamos RegisterResponse Dto:
+```csharp
+public string Message { get; set; } = string.Empty;
+public bool Success { get; set; }
+```
+
+Creamos AuthenticationController:
+```csharp
+[ApiController]
+[Route("api/v1/authenticate")]
+public class AuthenticationController : ControllerBase
+{
+    private readonly UserManager<ApplicationUser> _userManager;
+    private readonly RoleManager<ApplicationRole> _roleManager;
+
+    public AuthenticationController(UserManager<ApplicationUser> userManager, RoleManager<ApplicationRole> roleManager)
+    {
+        _userManager = userManager;
+        _roleManager = roleManager;
+    }
+
+    [HttpPost]
+    [Route("roles/add")]
+    public async Task<IActionResult> CreateRole([FromBody] CreateRoleRequest request)
+    {
+        var appRole = new ApplicationRole { Name = request.Role };
+        var createRole = await _roleManager.CreateAsync(appRole);
+        return Ok(new { message = "role created succesfully" });
+    }
+
+    [HttpPost]
+    [Route("register")]
+    public async Task<IActionResult> Register([FromBody] RegisterRequest request)
+    {
+        var result = await RegisterAsync(request);
+        return result.Success ? Ok(result) : BadRequest(result.Message);
+    }
+
+    private async Task<RegisterResponse> RegisterAsync(RegisterRequest request)
+    {
+        try
+        {
+            var userExists = await _userManager.FindByEmailAsync(request.Email);
+            if(userExists != null) return new RegisterResponse { Message = "User already exists", Success = false };
+
+            //if we get here, no user with this email..
+
+            userExists = new ApplicationUser
+            {
+                FullName = request.FullName,
+                Email = request.Email,
+                ConcurrencyStamp = Guid.NewGuid().ToString(),
+                UserName = request.Email,
+
+            };
+            var createUserResult = await _userManager.CreateAsync(userExists, request.Password);
+            if(!createUserResult.Succeeded) return new RegisterResponse { Message = $"Create user failed {createUserResult?.Errors?.First()?.Description}", Success = false };
+            //user is created...
+            //then add user to a role...
+            var addUserToRoleResult = await _userManager.AddToRoleAsync(userExists, "USER");
+            if(!addUserToRoleResult.Succeeded) return new RegisterResponse { Message = $"Create user succeeded but could not add user to role {addUserToRoleResult?.Errors?.First()?.Description}", Success = false };
+
+            //all is still well..
+            return new RegisterResponse
+            {
+                Success = true,
+                Message = "User registered successfully"
+            };
+        }
+        catch (Exception ex)
+        {
+            return new RegisterResponse { Message = ex.Message, Success = false };
+        }
+    }
+
+    [HttpPost]
+    [Route("login")]
+    [ProducesResponseType((int) HttpStatusCode.OK , Type = typeof(LoginResponse))]
+    public async Task<IActionResult> Login([FromBody] LoginRequest request)
+    {
+        var result = await LoginAsync(request);
+        return result.Success ? Ok(result) : BadRequest(result.Message);
+    }
+
+    private async Task<LoginResponse> LoginAsync(LoginRequest request)
+    {
+        try
+        {
+            var user = await _userManager.FindByEmailAsync(request.Email);
+            if (user is null) return new LoginResponse { Message = "Invalid email/password", Success = false };
+
+            //all is well if ew reach here
+            var claims = new List<Claim>
+        {
+            new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+            new Claim(ClaimTypes.Name, user.UserName),
+            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
+        };
+            var roles = await _userManager.GetRolesAsync(user);
+            var roleClaims = roles.Select(x => new Claim(ClaimTypes.Role, x));
+            claims.AddRange(roleClaims);
+
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("1swek3u4uo2u4a6e"));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var expires = DateTime.Now.AddMinutes(30);
+
+            var token = new JwtSecurityToken(
+                issuer: "https://localhost:5001",
+                audience: "https://localhost:5001",
+                claims: claims,
+                expires: expires,
+                signingCredentials: creds
+                );
+
+            return new LoginResponse
+            {
+                AccessToken = new JwtSecurityTokenHandler().WriteToken(token),
+                Message = "Login Successful",
+                Email = user?.Email,
+                Success = true,
+                UserId = user?.Id.ToString()
+            };
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return new LoginResponse { Success = false, Message = ex.Message };
+        }
+    }
+}
+```
+
+Agregamos [Authorize]
+
+## ollama-en-linux-server
+
+# Cómo instalar ollama en linux
+
+
+Paso a paso para instalar Ollama en Linux y poder ejectar nuestros propios modelos localmente.
+
+En [mi canal de youtube](https://youtu.be/HJKoVXKV3Oc) hay un video del paso a paso:
+
+1. Conectar a la consola (Putty o Cockpit).
+2. Instalar Ollama (ollama.com).
+3. Validar instalación.
+```csharp
+ollama --version
+```
+4. Cargar módelo (ollama.com/search).
+```csharp
+ollama pull <modeloName>
+```
+5. Comandos más usados:
+```csharp
+ollama list
+ollama rm
+systemctl status ollama
+```
+6. Escuchar toda la red
+```csharp
+sudo systemctl edit ollama
+```
+```csharp
+[Service]
+Environment="OLLAMA_HOST=0.0.0.0"
+```
+```csharp
+sudo systemctl daemon-reload
+sudo systemctl restart ollama
+```
+
+## ollama-gratis-con-gpu-de-16gb
+
+# Cómo obtener un ollama local con GPU 16GB gratis
+
+
+Paso a paso para correr un ollama local gratuitamente y con acceso a GPU.
+
+En [mi canal de youtube](https://youtu.be/WRT0RgIEXus) hay un video del paso a paso:
+
+1. Obtener un APIKEY de Ngrok.
+2. Ejecuta [setup_and_query_a_ollama_server.ipynb](https://colab.research.google.com/gist/codigo8a/25c30d421e6c8a237ea002face0cb65a/setup_and_query_a_ollama_server.ipynb) en Google Colab
+3. Configura ollama en Claude Code:
+```csharp
+$env:ANTHROPIC_AUTH_TOKEN="ollama"
+$env:ANTHROPIC_BASE_URL="tu-url-de-ngrok"
+$env:ANTHROPIC_API_KEY=""
+claude --model qwen3-coder
+```
+
+## pagina-web-github-pages
+
+# Cómo crear página web en Github Pages
+
+
+Código paso a paso para crear una pagina web usando el hosting gratuito de Github Pages, con dominio personalizado y certificado SSL.
+
+En [mi canal de youtube](https://youtu.be/h9FvfSM9zW8) hay un video del paso a paso:
+ 
+1. Buscar pantilla HTML
+- Descargar
+- Descomprimir
+
+2. Crear Repositorio
+- Agregar al nombre del repositorio = .github.io
+- Vincular repositorio
+- Subir plantilla
+
+3. Configurar dominio
+- Crear DNS personalizados
+```csharp
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+``` 
+- Crear C-NAME
+- Esperar creación de SSL
+
+## php-mysql-phpmyadmin
+
+# Instalación PHP - MYSQL - PHPMYADMIN
+
+A continuación describo los comandos de consola SSH para instalar en menos de 5 minutos PHP - MYSQL - PHPMYADMIN en un servidor UBUNTU (AWS Amazon Web Services).
+
+En [mi canal de youtube](https://bit.ly/2wSo5iD) hay un video del paso a paso:
+
+```
+sudo apt-get install apache2 -y
+sudo apt-get install mysql-server -y
+sudo mysql_secure_installation ()
+sudo apt-get install php libapache2-mod-php php-mysql -y
+sudo service apache2 restart
+
+sudo chown root:root -R /var/www/
+sudo chmod 777 -R /var/www/
+sudo apt-get install phpmyadmin -y
+sudo systemctl restart apache2
+sudo mysql -u root -p 
+
+CREATE USER 'ubuntu'@'localhost' IDENTIFIED BY 'tu_contrasena';
+GRANT ALL PRIVILEGES ON * . * TO 'ubuntu'@'localhost';
+FLUSH PRIVILEGES;
+
+//solucionar error al entrar a las tablas
+sudo cp /usr/share/phpmyadmin/libraries/sql.lib.php /usr/share/phpmyadmin/libraries/sql.lib.php.bak
+sudo nano /usr/share/phpmyadmin/libraries/sql.lib.php
+
+//buscar 
+(count($analyzed_sql_results['select_expr'] == 1)
+//remplazar por
+((count($analyzed_sql_results['select_expr']) == 1)
+```
+
+## problema-cors-laravel-6-2020
+
+# Solucionar problema CORS en Laravel 6 | 2020
+
+Este tutorial es la actualización de un post anterior que ya no funciona ya que la libreria barryvdh/laravel-cors no esta disponible.
+
+A continuación doy una solución rápida al problema Access-Control-Allow-Origin - CORS en Laravel 6 que sucede por razones de seguridad, los exploradores restringen las solicitudes HTTP de origen cruzado iniciadas dentro de un script.
+
+En [mi canal de youtube](https://youtu.be/CDEaBtEeVwM) hay un video del paso a paso:
+
+Instalamos
+```
+composer require fruitcake/laravel-cors
+```
+
+Agregamos esta linea al archivo app/Http/Kernel.php en "protected $middleware"
+```php
+\Fruitcake\Cors\HandleCors::class,
+```
+
+Creamos arvhivo de conficuración
+```php
+php artisan vendor:publish --tag="cors"
+```
+
+Abrimos el archivo de configuracion config/cors.php y agregamos el Path que queremos darle acceso de origenes
+```php
+'paths' => ['api/*'],
+```
+
+## problema-cors-laravel-6
+
+# Solucionar problema CORS en Laravel 6 | 2019
+
+Este tutorial es la actualización de un post anterior que ya no funciona en versiones nuevas:
+A continuación doy una solución rápida al problema Access-Control-Allow-Origin - CORS en Laravel 6 que sucede por razones de seguridad, los exploradores restringen las solicitudes HTTP de origen cruzado iniciadas dentro de un script.
+
+En [mi canal de youtube](https://youtu.be/CDEaBtEeVwM) hay un video del paso a paso:
+
+```csharp
+//Instalamos
+composer require barryvdh/laravel-cors
+
+//Agregamos esta linea al archivo config/app.php
+//en el array de providers
+Barryvdh\Cors\ServiceProvider::class,
+
+//Agregamos esta linea al archivo app/Http/Kernel.php
+//en "protected $middleware"
+\Barryvdh\Cors\HandleCors::class,
+
+//ejecutamos
+php artisan vendor:publish --provider="Barryvdh\Cors\ServiceProvider"
+```
+
+## problema-cors-laravel
+
+# Solucionar problema CORS en Laravel 5
+
+A continuación doy una solución rápida al problema Access-Control-Allow-Origin - CORS en Laravel 5 que sucede por razones de seguridad, los exploradores restringen las solicitudes HTTP de origen cruzado iniciadas dentro de un script.
+
+En [mi canal de youtube](https://youtu.be/KvldwGjCg5M) hay un video del paso a paso:
+
+```PHP
+//Creamos un middleware
+->header('Access-Control-Allow-Origin', '*’)
+->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS’);
+
+//ingresamos al Kernel
+'cors' => \App\Http\Middleware\Cors::class,
+
+//Agregamos a las rutas
+Route::group(['middleware' => 'cors'], function(){
+    //aqui van todas las rutas que necesitan CORS
+}); 
+```
+
+## problema-pantalla-negra-obs-studio
+
+# Cómo solucionar problema de pantalla negra en OBS studio
+
+Paso a paso para solucionar el problema de pantalla negra de la aplicación OBS studio.
+
+En [mi canal de youtube](https://youtu.be/6sUfXk17g8g) hay un video del paso a paso:
+
+1. Asegurarse que tiene los Drivers en la ultima versión
+2. Configurar el panel de control de Nvidia
+3. Agregrar OBS studio y poner graficos integrados
+4. Entrar a configuracion de pantalla
+5. Entrar a configuracion de graficos
+6. Agregar OBS studio y poner ahorro de energia
+
+## react-error-boundary
+
+# Cómo manejar errores en React
+
+
+Código paso a paso para agregar un archivo que nos maneje los errores en un Micro-FrontEnd.
+
+En [mi canal de youtube](https://youtu.be/nm8AcpPduV0) hay un video del paso a paso:
+ 
+1 Crear ErrorBoundary.tsx
+```react
+import { Component, ErrorInfo, ReactNode } from "react";
+
+interface ErrorBoundaryState {
+  hasError: boolean;
+}
+
+interface ErrorBoundaryProps {
+  children: ReactNode
+}
+
+class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+  constructor(props: ErrorBoundaryProps) {
+    super(props)
+    this.state = { hasError: false }
+  }
+
+  static getDerivedStateFromError(error: Error): ErrorBoundaryState {
+    console.log("Derived Error", error)
+    return { hasError: true }
+  }
+
+  componentDidCatch(error: Error, errorInfo: ErrorInfo): void {
+    console.log('Error: ', error)
+    console.log('Error Info: ', errorInfo)
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <h1>Oops! RemoteAPP falló</h1>
+    }
+
+    return this.props.children
+  }
+}
+
+export default ErrorBoundary;
+```
+
+2 Envolver app
+```react
+<ErrorBoundary>
+  <App />
+</ErrorBoundary>
+```
+
+3 Error de ejemplo
+```react
+  useEffect(() => {
+      throw new Error('Este es un error generado intencionalmente');
+  }, []);
+```
+
+## react-vite-federation
+
+# Cómo crear un Micro-FrontEnd React + Vite + Federation
+
+
+Código paso a paso para crear dos aplicaciones (remoto y cliente) React + Vite + Federation para Micro-FrontEnd.
+
+En [mi canal de youtube](https://youtu.be/M2o32pzNXI8) hay un video del paso a paso:
+ 
+1 Crear dos proyectos (remoto y cliente)
+- npm create vite@latest
+
+2 Instalar pnpm (PowerShell)
+```react
+Invoke-WebRequest https://get.pnpm.io/install.ps1 -UseBasicParsing | Invoke-Expression
+```
+
+3 Instalar federation (cliente y remoto)
+- pnpm add @originjs/vite-plugin-federation
+
+4 Configurar package.json (cliente y remoto)
+```react
+"preview": "vite preview --port 5001 --strictPort",
+"start": "npm run build && npm run preview"
+```
+
+5 Configurar vite.config (remoto)
+```react
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+import federation from "@originjs/vite-plugin-federation";
+
+export default defineConfig({
+  plugins: [
+    react(),
+    federation({
+      name: "remote-app",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./remote-app": "./src/main.tsx",
+      },
+      shared: ["react", "react-dom"],
+    }),
+  ],
+  build: {
+    modulePreload: false,
+    target: "esnext",
+    minify: false,
+    cssCodeSplit: false,
+  },
+});
+```
+
+6 Configurar main.tsx (remoto)
+```react
+const Main = () => (
+  <StrictMode>
+    <App />
+  </StrictMode>
+)
+
+export default Main;
+```
+
+7 Configurar vite.config (cliente)  
+```react
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+import federation from "@originjs/vite-plugin-federation";
+
+export default defineConfig({
+  plugins: [
+    react(),
+    federation({
+      name: "client-app",
+      remotes: {
+        remoteApp: "http://localhost:5001/assets/remoteEntry.js",
+      },
+      shared: ["react"],
+    }),
+  ],
+  build: {
+    modulePreload: false,
+    target: "esnext",
+
+    minify: false,
+    cssCodeSplit: false,
+  },
+});
+```
+
+8 Crear declares.d.ts (cliente)  
+```react
+declare module 'remoteApp/remote-app' {
+    export default RemoteApp;
+}
+```
+
+9 Modificar app remoto  
+10 Importar app remoto y llamarla cómo un componente  
+11 npm run start (remoto y cliente)
+
+## renombrar-archivos-en-masa-con-python
+
+# Cómo renombrar archivos en masa con Python
+
+Paso a paso para renombrar archivos MP3 en masa y poder darle un orden aleatorio para reproducir en un radio vehicular
+
+En [mi canal de youtube](https://youtu.be/6fsG3UX7Cfo) hay un video del paso a paso:
+
+```python
+cont = 1
+for i in file_list:
+        print ("file: "+i)
+        try:
+                x = i.split(".")
+                y = x[0].split("-")
+                if len(y) == 1:
+                    print(">>> no tiene separador \n")
+                elif len(y) > 2:
+                    print(">>> tiene más de un separador \n")
+                else:
+                    title = y[0].title().strip()
+                    artist = y[1].title().strip()
+                    
+                current = EasyID3(i)
+                newname = str(cont).zfill(3) + " " + title + " - " + artist + ".mp3"
+                #print(newname)
+                newname = current["title"][0] + ".mp3"
+                #newname.replace(" ", "_")
+                del current
+                print ("renaming "+i+" to "+newname)
+                os.rename(i, newname)
+                cont = cont + 1
+        except:
+                print (">>> that file didn't work for some reason.")
+```
+
+## reset-canon-g3100
+
+# Reset Impresora Cannon G3100 | 5B00
+
+Paso a paso para realizarle un reset a la imprersora Canon G3100 y solucionar el problema de deposito (absorbedor) de tinta lleno.
+
+En <a target="_blank" href="https://en.printkita.com/2020/09/download-canon-service-tool-v1050.html">esta web</a> hay un tutorial del paso a paso:
+
+1. <div id="cf-pdf-down">Descargar <a target="_blank" href="{{ page.tool }}">aplicación para reseteo</a></div>
+2. Seguir paso a paso del link.
+
+## roblox-studio-contador-de-balas
+
+# Cómo agregar un contador de balas en Roblox Studio
+
+
+Codigo para agregar un contador de balas en Roblox Studio usando el (ACS) Advanced Combat System.
+
+En [mi canal de youtube](https://youtu.be/EbKw0Dcaf6o) hay un video del paso a paso:
+
+Editar linea 1511 en StarterPlayer/StarterCharacterScripts/ACS_Client/ACS_Framework
+```csharp
+	if WeaponData.ShootType == 1 then
+		HUD.FText.Text = Ammo.."/"..StoredAmmo.." | Semi"
+	elseif WeaponData.ShootType == 2 then
+		HUD.FText.Text = Ammo.."/"..StoredAmmo.." | Burst"
+	elseif WeaponData.ShootType == 3 then
+		HUD.FText.Text = Ammo.."/"..StoredAmmo.." | Auto"
+	elseif WeaponData.ShootType == 4 then
+		HUD.FText.Text = Ammo.."/"..StoredAmmo.." | Pump-Action"
+	elseif WeaponData.ShootType == 5 then
+		HUD.FText.Text = Ammo.."/"..StoredAmmo.." | Bolt-Action"
+	end
+```
+
+## sistema-grafico-linux
+
+# Cómo instalar sistema gráfico Linux
+
+Paso a paso para instalar un sistema grafico liviano a Linux server.
+
+En [mi canal de youtube](https://youtu.be/bZnSi0pwkxI) hay un video del paso a paso:
+
+1. Descargar
+```csharp
+sudo apt update && sudo apt upgrade -y
+sudo apt install xfce4 xfce4-goodies -y
+```
+2. Sistema de inicio de session
+```csharp
+sudo apt install slim -y
+echo "startxfce4" > ~/.xsession
+```
+3. Escritorio remoto
+```csharp
+sudo apt install xrdp -y
+sudo systemctl restart xrdp
+sudo systemctl enable xrdp
+```
+
+## vite-jest-typescript-app
+
+# Cómo crear y configurar prueba unitaria Jest en React con Vite y Typescript
+
+Paso a paso para crear una prueba unitaria basica con Jest en React con Vite y Typescript.
+
+En [mi canal de youtube](https://youtu.be/62yuvCMZHco) hay un video del paso a paso:
+
+```react
+yarn add --dev jest babel-jest @babel/preset-env @babel/preset-react 
+yarn add --dev @testing-library/react @testing-library/dom @testing-library/user-event @types/jest jest-environment-jsdom
+yarn add --dev jest-svg-transformer
+pnpm i --save-dev @babel/core @babel/preset-typescript
+pnpm i --save-dev identity-obj-proxy
+```
+package.json
+```react
+"test": "jest --watchAll=false --coverage --CI=true"
+```
+
+babel.config.js 
+```react
+module.exports = {
+    presets: [
+        [ '@babel/preset-env', { targets: { esmodules: true } } ],
+        [ '@babel/preset-react', { runtime: 'automatic' } ],
+        '@babel/preset-typescript',
+    ],
+};
+```
+
+jest.config.js
+```react
+module.exports = {
+    testEnvironment: 'jest-environment-jsdom',
+    setupFiles: ['./jest.setup.js'],
+    moduleNameMapper: {
+        "^.+\\.svg$": "jest-svg-transformer",
+	"\\.(css|less|scss)$": "identity-obj-proxy",
+  }
+}
+```
+jest.setup.js
+
+App.test.tsx
+```react
+import { render, screen } from '@testing-library/react';
+import App from '../App';
+
+test('Renders main page correctly', async () => {
+  render(<App />);
+  const buttonCount = await screen.findByRole('button');
+  expect(buttonCount.innerHTML).toBe('count is 0');
+  expect(true).toBeTruthy();
+});
+```
+
+## vscode-server
+
+# Cómo instalar VS Code en Linux
+
+
+Paso a paso para instalar VS Code en Linux server y poder acceder a el desde cualquier parte por medio de una url.
+
+En [mi canal de youtube](https://youtu.be/kN0RcPp5W7Y) hay un video del paso a paso:
+
+1. Descargar y ejecutar
+```csharp
+curl -fsSL https://code-server.dev/install.sh | sh
+```
+2. Revisar version.
+```csharp
+code-server --version
+```
+3. Ejecutar desde cualquier ip:
+```csharp
+nano .config/code-server/config.yaml
+bind-addr: 0.0.0.0:8080
+```
+4. Activar servicio
+```csharp
+sudo systemctl enable code-server@$USER
+sudo systemctl start code-server@$USER
+sudo systemctl status code-server@$USER
+```
+5. Saber contraseña
+```csharp
+cat ~/.config/code-server/config.yaml
+```
+6. Ejecutar ip con puerto
+```csharp
+http://IP_DEL_SERVIDOR:8080
+```
+

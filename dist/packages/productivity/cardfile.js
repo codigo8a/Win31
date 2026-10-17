@@ -35,7 +35,21 @@ export function registerCardfile(os) {
       ctx.content.classList.add("card-app");
       let cards;
       try {
-        cards = normalizeCards(os.storage.get("cardfile-cards", []));
+        let stored = os.storage.get("cardfile-cards", null);
+        if (!Array.isArray(stored) || stored.length === 0) {
+          try {
+            const raw = os.fs && typeof os.fs.readFile === "function"
+              ? os.fs.readFile("C:\\DOCUMENTS\\YOUTUBE.CRD")
+              : null;
+            if (raw) {
+              const data = JSON.parse(raw);
+              stored = Array.isArray(data) ? data : data.cards;
+            }
+          } catch (e) {
+            stored = null;
+          }
+        }
+        cards = normalizeCards(stored || []);
       } catch {
         cards = [];
       }
